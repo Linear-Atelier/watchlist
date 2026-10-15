@@ -22,7 +22,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://watchlist.linearatelier.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://watchlist.linearatelier.com",
+  ),
   title: {
     default: "Christmas Watchlist · A Movie a Day",
     template: "%s · Christmas Watchlist",
@@ -41,12 +43,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Linear Atelier" }],
   creator: "Linear Atelier",
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: [
-      { url: "/apple-icon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Christmas Watchlist · A Movie a Day",
@@ -58,7 +56,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Christmas Watchlist: A Movie a Day",
@@ -70,13 +68,16 @@ export const metadata: Metadata = {
     title: "Christmas Watchlist · A Movie a Day",
     description:
       "A cozy, day-by-day holiday movie watchlist from October through Christmas. Track what you've watched, explore vibes, and count down to Christmas.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${greatVibes.variable} ${gentium.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${greatVibes.variable} ${gentium.variable} h-full`}
+    >
       <body className="min-h-full flex flex-col">
         <WatchedProvider>{children}</WatchedProvider>
       </body>
